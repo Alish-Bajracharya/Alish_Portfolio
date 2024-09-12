@@ -1,0 +1,11 @@
+/* External CSS for custom styles */
+
+/* Add more padding or margin as needed for small screen adjustments */
+#services .service-item {
+    transition: transform 0.3s ease;
+  }
+  
+  #services .service-item:hover {
+    transform: scale(1.05);
+  }
+  
