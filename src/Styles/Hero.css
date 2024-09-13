@@ -1,5 +1,3 @@
-/* Hero.css */
-
 /* Keyframes for the text reveal box */
 @keyframes textRevealBox {
     0%, 50% {
@@ -33,7 +31,7 @@
     animation: text_reveal 2.5s ease forwards;
   }
   
-  /* Add animation to the span */
+  /*  animation to the span */
   .animate-text-reveal span {
     position: absolute;
     top: 0;

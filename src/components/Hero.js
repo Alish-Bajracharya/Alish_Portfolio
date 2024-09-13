@@ -14,7 +14,7 @@ const Hero = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-70"></div>
       
-      {/* Hero Content */}
+      {/* Content */}
       <div className="relative z-10 container mx-auto h-full flex flex-col justify-center items-start px-8">
         <div className="relative animate-text-reveal">
           <h1 className="text-6xl font-bold mb-2 w-40">

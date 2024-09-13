@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Styles/Contact.css'; // External CSS file
+import '../Styles/Contact.css';
 
 const Contact = () => {
   return (
@@ -32,7 +32,7 @@ const Contact = () => {
               <img
                 src="https://img.icons8.com/bubbles/100/000000/new-post.png"
                 alt="Email Icon"
-                className="w-50 h-32"  // Increased the size to ensure visibility
+                className="w-50 h-32"
                 onError={(e) => e.target.src = 'https://img.icons8.com/bubbles/100/000000/email.png'}  
               />
             </div>
