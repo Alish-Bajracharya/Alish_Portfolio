@@ -1,6 +1,6 @@
 import React from "react";
 import bgImage from '../assets/ime.jpg';
-import '../Styles/Hero.css';  // Import your custom CSS file
+import '../Styles/Hero.css';  
 
 const Hero = () => {
   return (

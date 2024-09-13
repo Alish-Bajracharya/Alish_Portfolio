@@ -1,6 +1,5 @@
 import React from 'react';
-import '../Styles/Services.css'; // Import external CSS for any custom styling
-
+import '../Styles/Services.css'; 
 const Services = () => {
   return (
     <section id="services" className="py-16 bg-white">

@@ -5,17 +5,17 @@ import aboutImage from '../assets/aaalish.png';  // Correct image path
 const About = () => {
   return (
     <section id="about" className="py-24 flex justify-center items-center bg-gray-100">
-      <div className="about container mx-auto flex flex-col md:flex-row items-center justify-between max-w-6xl text-center md:text-left">
+      <div className="about container mx-auto flex flex-col md:flex-row items-center justify-between max-w-7xl text-center md:text-left">
         {/* Left Column: Image */}
-        <div className="col-left w-full md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0">
-          <div className="about-img relative w-64 h-96 border-8 border-white">
+        <div className="col-left w-full md:w-1/2 flex justify-center md:justify-center mb-8 md:mb-0">
+          <div className="about-img relative w-64 h-80 border-8 border-white left-12">
             <img src={aboutImage} alt="Alish" className="w-full h-full object-cover" />
-            <div className="absolute top-4 left-4 border-4 border-red-600 h-full w-full transform -translate-x-8 -translate-y-4"></div>
+            <div className="absolute top-5 left-9 border-4 border-red-600 h-full w-full transform -translate-x-8 -translate-y-4"></div>
           </div>
         </div>
 
         {/* Right Column: Content */}
-        <div className="col-right w-full md:w-1/2 p-6">
+        <div className="col-right w-full md:w-2/3 p-4  ">
           <h1 className="text-5xl font-bold mb-6 whitespace-nowrap flex items-center text-black">
             About <span className="text-red-600 ml-2">me</span>
           </h1>

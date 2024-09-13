@@ -1,22 +1,45 @@
-#footer {
-    padding: 2rem 0;
-    background-color: #29323c;
-    color: #fff;
-    text-align: center;
-  }
-  
-  #footer p {
-    margin-bottom: 1rem;
-  }
-  
-  .social-links a {
-    margin: 0 10px;
-    font-size: 1.5rem;
-    color: #fff;
-    transition: color 0.3s;
-  }
-  
-  .social-links a:hover {
-    color: #007bff;
-  }
-  
+/* Footer Styles */
+.footer-section {
+  background-color: #2b3a48; /* Dark blue background */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-heading {
+  white-space: nowrap; /* Ensures that the heading stays on one line */
+  letter-spacing: 2px; /* Spacing between the letters for better readability */
+}
+
+.footer-heading span.text-red-500 {
+  color: #ff3d47; /* Red color for initials */
+}
+
+.footer-subtext {
+  color: #fff; /* White color for subtext */
+  font-size: 1.25rem; /* Smaller font for subtext */
+  font-weight: 300;
+}
+
+.social-icons .social-icon {
+  width: 50px; /* Adjusted size of social icons */
+  transition: transform 0.3s ease;
+}
+
+.social-icons .social-icon:hover {
+  transform: scale(1.2); /* Scale effect on hover */
+}
+
+.social-icons a img {
+  filter: grayscale(1); /* Grayscale initially */
+  transition: filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: grayscale(0); /* Remove grayscale on hover */
+}
+
+#footer p {
+  color: #b0b0b0; /* Light grey color for copyright text */
+  font-size: 0.875rem; /* Small font size */
+  margin-top: 1rem;
+}
