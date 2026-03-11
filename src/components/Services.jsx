@@ -1,79 +1,98 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import { motion } from "framer-motion";
 
+const Services = () => {
+  const services = [
+    {
+      title: "MERN Stack Development",
+      description:
+        "Building full-stack web applications using MongoDB, Express, React, and Node.js with scalable architecture.",
+      icon: "https://logo.svgcdn.com/logos/react.svg",
+    },
+    {
+      title: "Flutter App Development",
+      description:
+        "Developing cross-platform mobile applications with Flutter and modern UI/UX design.",
+      icon: "https://img.icons8.com/color/96/flutter.png",
+    },
+    {
+      title: "Frontend Development",
+      description:
+        "Creating responsive and interactive websites using React, Tailwind CSS, and advanced animations.",
+      icon: "https://img.icons8.com/fluency/96/source-code.png",
+    },
+    {
+      title: "UI / UX Design",
+      description:
+        "Designing modern user interfaces focused on usability, aesthetics, and seamless user experience.",
+      icon: "https://img.icons8.com/color/96/web-design.png",
+    },
+  ];
 
-const ServiceItem = ({ image, title, description }) => (
-  <div className="service-item flex flex-col items-center p-6 bg-gray-200 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 w-80 h-80">
-    <img src={image} alt={title} className="mx-auto mb-4" />
-    <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-600 text-center">
-      {description}
-    </p>
-  </div>
-);
+  // Framer Motion variants
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-const Services = ({ title, description, services }) => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+    hover: { scale: 1.05, y: -10, boxShadow: "0px 20px 40px rgba(202, 165, 119, 0.4)" },
+  };
+
   return (
-    <section id="services" className="py-16 bg-white">
-      <div className="text-center mb-12">
-        <h2 className="text-5xl font-bold mb-4">
-          {title} <span className="text-red-600">Services</span>
-        </h2>
-        <p className="text-gray-600 max-w-xl mx-auto">
-          {description}
-        </p>
-      </div>
-      <div className="flex flex-wrap justify-center gap-8">
-        {services.map((service, index) => (
-          <ServiceItem
-            key={index}
-            image={service.image}
-            title={service.title}
-            description={service.description}
-          />
-        ))}
+    <section id="services" className="py-20 bg-[#0b0b0b] text-white overflow-hidden">
+      <div className="container mx-auto px-6 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl font-bold mb-6"
+        >
+          My <span className="text-[#caa577]">Services</span>
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-gray-400 max-w-2xl mx-auto mb-16 text-lg md:text-xl"
+        >
+          I provide modern development solutions combining performance, scalability, and beautiful user experiences.
+        </motion.p>
+
+        <motion.div
+          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              whileHover="hover"
+              className="p-8 bg-white/5 backdrop-blur-xl rounded-3xl border border-[#caa577]/20 cursor-pointer transition-all duration-500"
+            >
+              <img src={service.icon} className="w-16 mx-auto mb-6" alt={service.title} />
+
+              <h3 className="text-xl font-semibold mb-4 text-[#caa577]">{service.title}</h3>
+
+              <p className="text-gray-400 text-sm">{service.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
-};
-
-Services.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  services: PropTypes.arrayOf(
-    PropTypes.shape({
-      image: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired
-    })
-  ).isRequired
-};
-
-Services.defaultProps = {
-  title: 'My',
-  description: 'Web Development Services: Unlock the potential of your online presence with our expert web development services.',
-  services: [
-    {
-      image: 'https://img.icons8.com/bubbles/100/000000/services.png',
-      title: 'Custom Web Design',
-      description: 'Transform your ideas into a stunning reality with our Custom Web Design service.'
-    },
-    {
-      image: 'https://img.icons8.com/bubbles/100/000000/services.png',
-      title: 'Responsive Web Design',
-      description: 'Ensure your website looks amazing on every device with our responsive web design.'
-    },
-    {
-      image: 'https://img.icons8.com/bubbles/100/000000/services.png',
-      title: 'E-commerce Web Design',
-      description: 'Launch and grow your online store with our E-commerce Web Design service.'
-    },
-    {
-      image: 'https://img.icons8.com/bubbles/100/000000/services.png',
-      title: 'UI/UX Web Design',
-      description: 'Elevate user engagement with intuitive interfaces and seamless experiences.'
-    }
-  ]
 };
 
 export default Services;
